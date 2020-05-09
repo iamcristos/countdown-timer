@@ -5,27 +5,36 @@ import Counter from './component/Counter';
 import Text from './component/Text';
 
 function App() {
+  const [time, setTime] = useState('')
+  const [interval, setInterva] = useState(null)
+
   const state = {
     timerOn: false,
-    timerTime: 0,
+    timerTime: time * 60 * 1000,
     timerStart: 0,
     completed: false
   }
   const [counter, setCounter] = useState(state)
-  const [interval, setInterva] = useState(null)
-  const [time, setTime] = useState('')
-  const [text, setText] = useState('')
-  const startTimer = (e, num) => {
-     setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: prevCount.timerTime, timerStart: Date.now() - prevCount.timerTime}));
 
+
+  const startTimer = (e, num) => {
+    if(+time * 60*1000 <= counter.timerTime) {
+        return
+    }
+     setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: prevCount.timerTime, timerStart: Date.now() - prevCount.timerTime}));
      setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerTime:  (Date.now() - prevState.timerStart)})), 1000))
   }
 
-  const stopTimer = (interval) => {
+  const pauseTimer = () => {
+    clearInterval(interval)
+    setCounter(prevState => ({...prevState, timerOn: false}))
+  }
+
+  const stopTimer = () => {
     clearInterval(interval)
     setCounter(prevState => ({...prevState, timerOn: false, completed: true}))
   }
-
+  
   const handleInput = (e) =>{
     setTime(e.target.value)
   }
@@ -41,14 +50,12 @@ function App() {
         counter = {counter}
         stopTimer={stopTimer}
         interval={interval}
-        text={text}
-        setText={setText}
       />
       <Counter 
         startTimer={startTimer}
-        interval={interval}
-        stopTimer={stopTimer}
+        pauseTimer={pauseTimer}
         counter={counter}
+        time={time}
       />
     </div>
   );

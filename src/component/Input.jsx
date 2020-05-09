@@ -13,8 +13,8 @@ export default function Input(props) {
           <input 
             type='text' 
             placeholder='min'
-             onChange={props.handleInput} 
-             value={props.time}
+            onChange={props.handleInput} 
+            value={props.time}
           />
           <button type='submit'>Start</button>
         </form>
