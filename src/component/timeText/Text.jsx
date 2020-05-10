@@ -6,7 +6,7 @@ export default function Text(props) {
     const {counter, time ,stopTimer, interval} = props
     const stopTime = 0
     const checkHalf = ((time * 60 * 1000)/2 >= counter.timerTime)
-    console.log(time, checkHalf)
+   
     let text
     if(counter.timerOn && stopTime >= counter.timerTime) {
         sound.play()

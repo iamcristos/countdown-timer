@@ -5,7 +5,7 @@ export default function Counter(props) {
     const { timerTime, timerOn } = props.counter;
     const seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     const minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-    const secondCheck = (sec) => timerOn && (+props.time*60 *1000) - timerTime >= (sec * 1000);
+    const secondCheck = (sec) => timerOn &&  timerTime <= (sec * 1000);
     const color =  secondCheck(20) ? 'red' : "black"
 
     let text = <Timer style={{color}}> {minutes} : {seconds}  </Timer>

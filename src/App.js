@@ -17,7 +17,7 @@ function App() {
   const [counter, setCounter] = useState(state)
 
   const startTimer = () => {
-    setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: time * 60 * 1000, timerStart: time * 60 * 1000 + Date.now()}));
+    setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: time * 60 * 1000, timerStart: time * 60 * 1000 + Date.now(), completed: false}));
     setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerTime:  (prevState.timerStart - Date.now())})), 1000))
   }
   const resumeTimer = (e, num=0) => {
