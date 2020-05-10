@@ -1,5 +1,5 @@
 import React from 'react'
-import {Section, Form, Label, Input, Button} from './input';
+import {Section, Form, Label, Input, Button} from './style';
 export default function TimeInput(props) {
     const handleOnSubmit = (e)=>{
         e.preventDefault()
@@ -8,10 +8,11 @@ export default function TimeInput(props) {
     
     return (
         <Section>
-          <Form onSubmit={handleOnSubmit}>
-            <Label>Countdown:</Label>
+          <Form onSubmit={handleOnSubmit} data-testid='form'>
+            <Label htmlFor="inputtime">Countdown:</Label>
             <Input 
               type='text' 
+              name='inputtime'
               placeholder='min'
               required
               onChange={props.handleInput} 
