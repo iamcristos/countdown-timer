@@ -1,5 +1,5 @@
 import React from 'react'
-import audio from '../assests/sound.mp3';
+import audio from '../../assests/sound.mp3';
 
 export default function Text(props) {
     const sound = new Audio(audio)

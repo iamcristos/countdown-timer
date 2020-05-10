@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import Input from './component/Input';
-import Counter from './component/Counter';
-import Text from './component/Text';
+import Input from './component/input/Input';
+import Counter from './component/counter/Counter';
+import Text from './component/timeText/Text';
 
 function App() {
   const [time, setTime] = useState('')
@@ -32,9 +32,9 @@ function App() {
 
   const stopTimer = () => {
     clearInterval(interval)
-    setCounter(prevState => ({...prevState, timerOn: false, completed: true}))
+    setCounter(prevState => ({...prevState, timerOn: false, completed: true, timerStart: 0, timerTime:0}))
   }
-  
+
   const handleInput = (e) =>{
     setTime(e.target.value)
   }
