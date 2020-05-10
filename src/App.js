@@ -25,7 +25,7 @@ function App() {
         return
     }
     if(!counter.timerTime) return
-    if(num) clearInterval(interval)
+     clearInterval(interval)
      setCounter(prevCount => ({...prevCount, timerOn: true, timerStart: prevCount.timerTime + Date.now()}));
      setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerStart: prevState.timerStart - num,timerTime: (prevState.timerStart - Date.now())})), 1000))
   }
