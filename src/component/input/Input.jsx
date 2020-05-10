@@ -17,6 +17,7 @@ export default function TimeInput(props) {
               required
               onChange={props.handleInput} 
               value={props.time}
+              data-testid='input'
             />
             <Button type='submit'>Start</Button>
           </Form>
