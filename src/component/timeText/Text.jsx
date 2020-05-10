@@ -15,7 +15,7 @@ export default function Text(props) {
         text = ('More than halfway there!')
     }
     return (
-        <div>
+        <div style={{margin: '5px', height: '15px'}}>
             {!counter.completed && text}
             {counter.completed && "Time's up"}
         </div>
