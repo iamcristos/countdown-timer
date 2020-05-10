@@ -57,6 +57,6 @@ export const Button= styled.button`
         opacity:0.8;
     }
     &:focus {
-        opacity:0.4;
+        opacity:0.8;
     }
 `;

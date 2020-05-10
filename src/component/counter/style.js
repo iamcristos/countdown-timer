@@ -20,7 +20,11 @@ export const Timer = styled.p`
     font-weight: 700;
     margin:15px;
 
-    @media (min-width: 500px) {
+    /* @media (min-width: 500px) {
         font-size: 70px
-    }
+    } */
+`;
+
+export const ButtonDiv = styled.div`
+    
 `;

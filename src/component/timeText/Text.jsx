@@ -3,11 +3,12 @@ import audio from '../../assests/sound.mp3';
 
 export default function Text(props) {
     const sound = new Audio(audio)
-    const {counter, time, stopTimer, interval} = props
-    const stopTime = +time * 60 * 1000;
-    const checkHalf = (stopTime/2 <= counter.timerTime)
+    const {counter, time ,stopTimer, interval} = props
+    const stopTime = 0
+    const checkHalf = ((time * 60 * 1000)/2 >= counter.timerTime)
+    console.log(time, checkHalf)
     let text
-    if(counter.timerOn && stopTime <= counter.timerTime) {
+    if(counter.timerOn && stopTime >= counter.timerTime) {
         sound.play()
         stopTimer(interval)
     }
