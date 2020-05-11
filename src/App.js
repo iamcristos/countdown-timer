@@ -17,6 +17,7 @@ function App() {
   const [counter, setCounter] = useState(state)
 
   const startTimer = () => {
+    if(counter.timerOn) return
     setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: time * 60 * 1000, timerStart: time * 60 * 1000 + Date.now(), completed: false}));
     setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerTime:  (prevState.timerStart - Date.now())})), 1000))
   }
@@ -50,6 +51,7 @@ function App() {
         startTimer={startTimer}
         time={time}
         handleInput={handleInput}
+        timerOn={counter.timerOn}
       />
       <Text 
         time = {time}
@@ -65,6 +67,7 @@ function App() {
       />
       <SpeedContol
         startTimer={resumeTimer}
+        timerOn={counter.timerOn}
       />
     </div>
   );

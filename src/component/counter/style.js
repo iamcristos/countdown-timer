@@ -11,20 +11,12 @@ export const BlinkTimer = ({minutes, seconds}) => (
 <Blink
     text={`${minutes} : ${seconds}`}
     color='red'
-    fontSize='120px'
-    fontWeight='700'
+    fontSize='80px'
+    fontWeight='500'
 />)
 
 export const Timer = styled.p`
-    font-size: 120px;
-    font-weight: 700;
+    font-size: 80px;
+    font-weight: 500;
     margin:15px;
-
-    /* @media (min-width: 500px) {
-        font-size: 70px
-    } */
-`;
-
-export const ButtonDiv = styled.div`
-    
 `;

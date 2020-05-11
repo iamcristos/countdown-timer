@@ -18,8 +18,12 @@ export default function TimeInput(props) {
               onChange={props.handleInput} 
               value={props.time}
               data-testid='input'
+              disabled={props.timerOn}
             />
-            <Button type='submit'>Start</Button>
+            <Button 
+              type='submit'
+              disabled={props.timerOn}
+              >Start</Button>
           </Form>
       </Section>
     )

@@ -19,11 +19,11 @@ export default function Counter(props) {
                 {text}
             </div>
             {!timerOn ? 
-                <button onClick={props.startTimer} style={{background: 'white', border: "none"}}>
-                    <i class="far fa-play-circle" style={{fontSize: '35px'}}></i>
+                <button onClick={props.startTimer} style={{background: 'white', border: "none", outline: 'none'}}>
+                    <i class="far fa-play-circle" style={{fontSize: '25px', cusor: 'pointer'}}></i>
                 </button> :
-                <button onClick={()=> props.pauseTimer()} style={{background: 'white', border: "none"}}>
-                    <i class="far fa-pause-circle" style={{fontSize: '30px'}}></i>
+                <button onClick={()=> props.pauseTimer()} style={{background: 'white', border: "none", outline: 'none'}}>
+                    <i class="far fa-pause-circle" style={{fontSize: '25px',  cusor: 'pointer'}}></i>
                 </button>
             }
         </Section>
