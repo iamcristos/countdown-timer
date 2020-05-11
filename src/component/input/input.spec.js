@@ -30,5 +30,4 @@ test('should input onChange event to be fired', () => {
     fireEvent.change(input, {target: {time: 1}})
     expect(input).toBeInTheDocument()
     expect(time).toBe(1)
-    // expect(handleInput).toHaveBeenCalled()
 })

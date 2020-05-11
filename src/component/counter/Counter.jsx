@@ -14,15 +14,21 @@ export default function Counter(props) {
         text = <BlinkTimer minutes={minutes} seconds={seconds} />
     }
     return (
-        <Section>
+        <Section data-testid='section'>
             <div>
                 {text}
             </div>
             {!timerOn ? 
-                <button onClick={props.startTimer} style={{background: 'white', border: "none", outline: 'none'}}>
+                <button 
+                    data-testid='play'
+                    onClick={props.startTimer} style={{background: 'white', border: "none", outline: 'none'}}>
                     <i class="far fa-play-circle" style={{fontSize: '25px', cusor: 'pointer'}}></i>
                 </button> :
-                <button onClick={()=> props.pauseTimer()} style={{background: 'white', border: "none", outline: 'none'}}>
+                <button 
+                    data-testid='pause'
+                    onClick={()=> props.pauseTimer()} 
+                    style={{background: 'white', border: "none", outline: 'none'}}
+                    >
                     <i class="far fa-pause-circle" style={{fontSize: '25px',  cusor: 'pointer'}}></i>
                 </button>
             }

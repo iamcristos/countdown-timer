@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import Text from './Text';
 
 test('should return More than halfway there', () => {
-    const props = {counter: {completed: false, timerTime: Date.now() + (30 *1000), timerOn:true}, time:1, stopTimer: ()=>jest.fn()}
+    const props = {counter: {completed: false, timerTime:30 *1000, timerOn:true}, time:1, stopTimer: ()=>jest.fn()}
     const { getByText } = render(<Text 
         counter={props.counter}
         time={props.time}

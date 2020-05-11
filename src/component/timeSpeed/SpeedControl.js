@@ -3,7 +3,7 @@ import {Section, Button} from './style'
 
 export default function SpeedControl(props) {
     return (
-        <Section>
+        <Section data>
             <Button 
                 disabled={!props.timerOn}
                 onClick={(e) => props.startTimer(e, 1000)}
