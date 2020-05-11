@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[![Netlify Status](https://api.netlify.com/api/v1/badges/787cdb63-f78b-410c-baf2-801cff523f62/deploy-status)](https://app.netlify.com/sites/hardcore-wing-6a0b7c/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/787cdb63-f78b-410c-baf2-801cff523f62/deploy-status)](https://app.netlify.com/sites/hardcore-wing-6a0b7c/deploys) [![iamcristos](https://circleci.com/gh/iamcristos/countdown-timer.svg?style=svg)](<https://app.circleci.com/pipelines/github/iamcristos/countdown-timer>)
 
 A simple countdown timer app
 
