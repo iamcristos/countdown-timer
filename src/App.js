@@ -20,14 +20,15 @@ function App() {
     setCounter(prevCount => ({...prevCount, timerOn: true, timerTime: time * 60 * 1000, timerStart: time * 60 * 1000 + Date.now(), completed: false}));
     setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerTime:  (prevState.timerStart - Date.now())})), 1000))
   }
-  const resumeTimer = (e, num=0) => {
+  const resumeTimer = (e, num=1000) => {
     if(+time * 60*1000 <= counter.timerTime) {
         return
     }
     if(!counter.timerTime) return
      clearInterval(interval)
      setCounter(prevCount => ({...prevCount, timerOn: true, timerStart: prevCount.timerTime + Date.now()}));
-     setInterva(setInterval(()=> setCounter(prevState => ({...prevState, timerStart: prevState.timerStart - num,timerTime: (prevState.timerStart - Date.now())})), 1000))
+     setInterva(setInterval(()=> setCounter(prevState => ({...prevState, 
+      timerTime: (prevState.timerTime - (1000))})), num))
   }
 
   const pauseTimer = () => {
