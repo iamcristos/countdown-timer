@@ -46,7 +46,7 @@ function App() {
     setTime(e.target.value)
   }
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <Input 
         startTimer={startTimer}
         time={time}
